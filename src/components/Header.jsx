@@ -82,15 +82,6 @@ export function Header({ activeView, onNavigate, user, onAuthClick, onLogout }) 
           <Icon>shield</Icon>
           <span>{t.nav.admin}</span>
         </button>
-        {user && (
-          <button className="mobile-tab" type="button" onClick={() => setMenuOpen(!menuOpen)}>
-            <Icon>account_circle</Icon>
-            <span className="user-name">{displayName}</span>
-          </button>
-        )}
-        <button className="mobile-tab" type="button" onClick={() => setLang(lang === "my" ? "en" : "my")}>
-          <span className="lang-label">{lang === "my" ? "EN" : "MY"}</span>
-        </button>
       </div>
       {menuOpen && user && (
         <div className={`dropdown-backdrop ${menuOpen ? "visible" : ""}`} onClick={() => setMenuOpen(false)}>
