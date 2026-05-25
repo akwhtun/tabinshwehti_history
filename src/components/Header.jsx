@@ -74,6 +74,10 @@ export function Header({ activeView, onNavigate, user, onAuthClick, onLogout }) 
           <Icon>menu_book</Icon>
           <span>{t.nav.topics}</span>
         </button>
+        <button className={activeView === "about" ? "mobile-tab active" : "mobile-tab"} type="button" onClick={() => onNavigate("about")}>
+          <Icon>info</Icon>
+          <span>{t.nav.about}</span>
+        </button>
         <button className={activeView === "admin" ? "mobile-tab active" : "mobile-tab"} type="button" onClick={() => onNavigate("admin")} style={user && isAdminEmail(user.email) ? {} : { display: "none" }}>
           <Icon>shield</Icon>
           <span>{t.nav.admin}</span>

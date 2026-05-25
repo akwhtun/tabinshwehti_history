@@ -1453,12 +1453,13 @@ select:focus {
   }
 
   .mobile-nav {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     border-top: 1px solid rgba(242, 202, 80, 0.12);
   }
 
   .mobile-tab {
+    flex: 1;
+    min-width: 0;
     display: grid;
     place-items: center;
     gap: 3px;
@@ -1609,5 +1610,35 @@ select:focus {
 
   .user-menu-wrap .user-dropdown {
     right: -10px;
+  }
+
+  .admin-tabs {
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+  .admin-tab {
+    padding: 10px 10px;
+    font-size: 0.78rem;
+  }
+  .editor-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-list {
+    padding: 16px 0;
+    overflow: hidden;
+  }
+  .admin-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .admin-row > div:first-child {
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+  .evidence-actions {
+    flex-wrap: wrap;
+  }
+  .admin-editor {
+    padding: 18px;
   }
 }

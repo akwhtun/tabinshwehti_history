@@ -33,7 +33,7 @@ export function AuthModal({ open, onClose }) {
     setStatus({ type: "loading", text: t.auth.loading });
     const payload = { email, password };
     const response = mode === "register"
-      ? await supabase.auth.signUp({ ...payload, options: { data: { display_name: displayName || email.split("@")[0] } } })
+      ? await supabase.auth.signUp({ ...payload, options: { data: { display_name: displayName || email.split("@")[0] }, redirectTo: window.location.origin } })
       : await supabase.auth.signInWithPassword(payload);
 
     if (response.error) {
